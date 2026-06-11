@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NewsRadar — Your News, Your Way</title>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body class="light">
+
+<header class="header">
+  <div class="logo">📡 News<span>Radar</span></div>
+  <div class="header-center">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input id="searchInput" type="text" placeholder="Search articles…"/>
+      <button id="clearSearch" class="clear-btn hidden">✕</button>
+    </div>
+  </div>
+  <div class="header-right">
+    <button id="bookmarksBtn" class="icon-btn" title="Read Later">🔖 <span id="bookmarkCount">0</span></button>
+    <button id="themeBtn" class="icon-btn">🌙</button>
+  </div>
+</header>
+
+<!-- Category Tabs -->
+<nav class="category-nav">
+  <button class="cat-btn active" data-cat="general">🌍 Top</button>
+  <button class="cat-btn" data-cat="technology">💻 Tech</button>
+  <button class="cat-btn" data-cat="business">📈 Business</button>
+  <button class="cat-btn" data-cat="science">🔬 Science</button>
+  <button class="cat-btn" data-cat="health">🏥 Health</button>
+  <button class="cat-btn" data-cat="sports">⚽ Sports</button>
+  <button class="cat-btn" data-cat="entertainment">🎬 Entertainment</button>
+  <div class="country-wrap">
+    <select id="countrySelect">
+      <option value="us">🇺🇸 US</option>
+      <option value="gb">🇬🇧 UK</option>
+      <option value="in">🇮🇳 India</option>
+      <option value="au">🇦🇺 Australia</option>
+      <option value="ca">🇨🇦 Canada</option>
+    </select>
+  </div>
+</nav>
+
+<!-- Filter Bar -->
+<div class="filter-bar">
+  <span class="filter-label">Sort:</span>
+  <button class="filter-btn active" data-sort="publishedAt">Latest</button>
+  <button class="filter-btn" data-sort="popularity">Popular</button>
+  <button class="filter-btn" data-sort="relevancy">Relevant</button>
+  <span id="articleCount" class="article-count"></span>
+</div>
+
+<!-- Main Content -->
+<main class="content-area" id="contentArea">
+  <!-- Hero Article -->
+  <div id="heroArticle" class="hero-article"></div>
+  <!-- Cards Grid -->
+  <div id="articlesGrid" class="articles-grid"></div>
+  <!-- Skeleton loader -->
+  <div id="skeletons" class="articles-grid"></div>
+  <!-- Scroll sentinel -->
+  <div id="scrollSentinel" style="height:1px"></div>
+</main>
+
+<!-- Bookmarks Sidebar -->
+<div id="bookmarksSidebar" class="bookmarks-sidebar hidden">
+  <div class="sidebar-header">
+    <h3>🔖 Read Later</h3>
+    <button id="closeSidebar">✕</button>
+  </div>
+  <div id="bookmarksList" class="bookmarks-list"></div>
+</div>
+<div id="sidebarOverlay" class="sidebar-overlay hidden"></div>
+
+<div id="toast" class="toast hidden"></div>
+<script src="js/bookmarks.js"></script>
+<script src="js/search.js"></script>
+<script src="js/readtime.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
